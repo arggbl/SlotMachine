@@ -6,35 +6,29 @@ var chances = [];
 var combos = [111,22,222,333,444];
 var multipliers = [2,3,10,20,100];
 
-for (let i = 1; i < 90; i++) {
-    chances.push(0);
-    if (i <= 60) {
-        chances.push(1);
+for (let i = 1; i < 100; i++) { // fill the 'chances' array with values, setting chances of numbers occuring
+    if (i <= 55) {
+        chances.push(1); // 55/100 values are 1, so we have a 56% chance of getting a 1 on any given roll
     }
-    if (i <= 31) {
-        chances.push(2);
+    else if (i <= 55 + 25) {
+        chances.push(2); // 25/100, 28% chance
     }
-    if (i <= 8) {
-        chances.push(3);
+    else if (i <= 55 + 25 + 15) {
+        chances.push(3); // 15/100, 12% chance
     }
-    if (i <= 1) {
-        chances.push(4);
+    else if (i <= 55 + 25 + 15 + 5) {
+        chances.push(4); // 5/100, 4% chance
     }
 }
 
 // setup variables /\
 // setup functions \/
 
-function resetButtons() {
+function resetButtons() { // re-enable all the buttons
     document.getElementById("ten").disabled = false;
     document.getElementById("hund").disabled = false;
     document.getElementById("all").disabled = false;
 }
-
-function getRandomInt(max) { // Generate a random integer between 0 and specified max int
-    return Math.floor(Math.random() * max);
-}
-
 
 function animate(i1,i2,i3) {
     document.getElementById("ten").disabled = true;
@@ -56,8 +50,8 @@ function animate(i1,i2,i3) {
     s = 0;
     t = 0; 
     
-    for (let i = 0; i < max+16; i++) {
-        if (i < i1) {
+    for (let i = 0; i < max; i++) {
+        if (f < i1) {
             f= (f + 1);
         }
         if (s < i2) {
@@ -110,9 +104,9 @@ function reset(event) {
     money = 100;
 }
 
-function gamble(bet) {
+function gamble(bet) { // main loop
     if (bet > money) {
-        return 0;
+        return 0; // edge case. :|
     }
     // c,d,e,first,second,third;
     let c = Math.random() * 100;
