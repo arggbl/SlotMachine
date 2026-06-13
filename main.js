@@ -50,9 +50,9 @@ function animate(i1, i2, i3) {
 
     for (let i = 0; i < totalFrames; i++) {
 
-        if (f < i1 + 4) f++;
-        if (s < i2 + 8) s++;
-        if (t < i3 + 12) t++;
+        if (f < i1 + 5) f++;
+        if (s < i2 + 10) s++;
+        if (t < i3 + 15) t++;
 
         // Capture values for this frame
         let currentF = f;
