@@ -157,7 +157,7 @@ function gamble(bet) {
         document.getElementById("ten").disabled = true;
     }
 
-    if (money === 0) {
+    if (money == 0) {
         document.getElementById("all").disabled = true;
     }
 }
