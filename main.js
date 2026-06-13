@@ -46,7 +46,7 @@ function animate(i1, i2, i3) {
     let s = 0;
     let t = 0;
 
-    let totalFrames = max + 13;
+    let totalFrames = max + 16;
 
     for (let i = 0; i < totalFrames; i++) {
 
