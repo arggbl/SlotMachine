@@ -1,23 +1,26 @@
-var symbols = ["🍬", "🍋", "🐟", "🍓"];
+var symbols = ["🍎", "🍋", "🐟", "🍓", "💩"];
 
 var money = 100;
 var chances = [];
-var combos = ['000', '22', '111', '222', '333'];
-var multipliers = [2, 3, 10, 20, 100];
+var combos = ['4','000', '22', '111', '222', '333', '3'];
+var multipliers = [0, 2, 3, 10, 20, 100, -1];
 
 // Fill chances array with exactly 100 entries
 for (let i = 0; i < 100; i++) {
-    if (i < 55) {
+    if (i < 60) {
+        chances.push(0);
+    }
+    else if (i < 70) {
+        chances.push(4);
+    }
+    else if (i < 75) {
         chances.push(1);
     }
-    else if (i < 80) {
+    else if (i < 95) {
         chances.push(2);
     }
-    else if (i < 95) {
-        chances.push(3);
-    }
     else {
-        chances.push(4);
+        chances.push(3);
     }
 }
 
@@ -42,7 +45,7 @@ function animate(i1, i2, i3) {
     let s = 0;
     let t = 0;
 
-    let totalFrames = max + 12;
+    let totalFrames = max + 13;
 
     for (let i = 0; i < totalFrames; i++) {
 
@@ -57,9 +60,9 @@ function animate(i1, i2, i3) {
 
         setTimeout(() => {
             output(
-                currentF % 4,
-                currentS % 4,
-                currentT % 4
+                currentF % 5,
+                currentS % 5,
+                currentT % 5
             );
         }, 100 * i); // faster animation (100ms per frame)
     }
@@ -70,15 +73,15 @@ function animate(i1, i2, i3) {
 function output(i1, i2, i3) {
 
     var string = `<pre>
-   ____________________________________________ 
-  /* * * * * * * * * * * * * * * * * * * * * * \\ 
-  |  L  O  S  E   Y  O  U  R   M  O  N  E  Y ! |
-  \\_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*/
-  ______________       ______________________________
-| ${symbols[mod(i1 + 1, 4)]} | ${symbols[mod(i2 + 1, 4)]} | ${symbols[mod(i3 + 1, 4)]} |     |🍬🍬🍬 - x2    🐟🐟 - x3   |
-|-${symbols[mod(i1, 4)]}-|-${symbols[mod(i2, 4)]}-|-${symbols[mod(i3, 4)]}-|     |🍋🍋🍋 - x10  🐟🐟🐟 - x20 |
-| ${symbols[mod(i1 - 1, 4)]} | ${symbols[mod(i2 - 1, 4)]} | ${symbols[mod(i3 - 1, 4)]} |     |🍓🍓🍓 - x100              |
-\\---------------/      \\----------------------------/
+     ____________________________________________ 
+    /* * * * * * * * * * * * * * * * * * * * * * \\ 
+    |  L  O  S  E   Y  O  U  R   M  O  N  E  Y ! |
+    \\_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*/
+  ______________       ____________________________________________
+| ${symbols[mod(i1 + 1, 5)]} | ${symbols[mod(i2 + 1, 5)]} | ${symbols[mod(i3 + 1, 5)]} |     | 🍎🍎🍎 - x2    🐟🐟 - x3    💩 - LOSE  |
+|-${symbols[mod(i1, 5)]}-|-${symbols[mod(i2, 5)]}-|-${symbols[mod(i3, 5)]}-|     | 🍋🍋🍋 - x10  🐟🐟🐟 - x20             |
+| ${symbols[mod(i1 - 1, 5)]} | ${symbols[mod(i2 - 1, 5)]} | ${symbols[mod(i3 - 1, 5)]} |     | 🍓🍓🍓 - x100  🍓 - MONEY BACK          |
+\\---------------/      \\------------------------------------------/
 </pre>`;
 
     document.getElementById("output").innerHTML = string;
@@ -101,7 +104,7 @@ function reset(event) {
 
     document.getElementById("result").innerHTML = "RESET";
     document.getElementById("output").innerHTML = "RESET";
-    document.getElementById("money").innerHTML = "you have 100$";
+    document.getElementById("money").innerHTML = "RESET";
 
     resetButtons();
 }
