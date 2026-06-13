@@ -142,7 +142,7 @@ function gamble(bet) {
             let gain = bet * multipliers[i];
 
             money += gain + bet;
-            if (gain < 0) {
+            if (gain > 0) {
                 document.getElementById("result").innerHTML =
                     "you made " + gain + " dollars!";
             }
