@@ -41,15 +41,14 @@ function animate(i1, i2, i3) {
     let f = 0;
     let s = 0;
     let t = 0;
-    let add = 16;
 
     let totalFrames = max + add;
 
     for (let i = 0; i < totalFrames; i++) {
 
-        if (f < i1 + add) f++;
-        if (s < i2 + add) s++;
-        if (t < i3 + add) t++;
+        if (f < i1 + 4) f++;
+        if (s < i2 + 8) s++;
+        if (t < i3 + 12) t++;
 
         // Capture values for this frame
         let currentF = f;
