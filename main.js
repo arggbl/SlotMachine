@@ -42,7 +42,7 @@ function animate(i1, i2, i3) {
     let s = 0;
     let t = 0;
 
-    let totalFrames = max + add;
+    let totalFrames = max + 12;
 
     for (let i = 0; i < totalFrames; i++) {
 
