@@ -77,7 +77,7 @@ function output(i1, i2, i3) {
   ______________       ______________________________
 | ${symbols[mod(i1 + 1, 4)]} | ${symbols[mod(i2 + 1, 4)]} | ${symbols[mod(i3 + 1, 4)]} |     |🍬🍬🍬 - x2    🐟🐟 - x3   |
 |-${symbols[mod(i1, 4)]}-|-${symbols[mod(i2, 4)]}-|-${symbols[mod(i3, 4)]}-|     |🍋🍋🍋 - x10  🐟🐟🐟 - x20 |
-| ${symbols[mod(i1 - 1, 4)]} | ${symbols[mod(i2 - 1, 4)]} | ${symbols[mod(i3 - 1, 4)]} |     |🍓🍓🍓 - x100             |
+| ${symbols[mod(i1 - 1, 4)]} | ${symbols[mod(i2 - 1, 4)]} | ${symbols[mod(i3 - 1, 4)]} |     |🍓🍓🍓 - x100              |
 \\---------------/      \\----------------------------/
 </pre>`;
 
