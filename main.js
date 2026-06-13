@@ -124,7 +124,7 @@ function gamble(bet) {
     let third = chances[e];
 
     let comb = String(first) + String(second) + String(third);
-
+    console.log(comb);
     animate(first, second, third);
 
     money -= bet;
