@@ -1,4 +1,5 @@
 var symbols = ["🍎", "🍋", "🐟", "🍓", "💩"];
+console.log(symbols);
 
 var money = 100;
 var chances = [];
@@ -124,7 +125,7 @@ function gamble(bet) {
     let third = chances[e];
 
     let comb = String(first) + String(second) + String(third);
-    console.log(comb);
+    console.log(first,second,third);
     animate(first, second, third);
 
     money -= bet;
