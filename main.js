@@ -4,7 +4,7 @@ console.log(symbols);
 var money = 100;
 var chances = [];
 var combos = ['4','000', '22', '111', '222', '333', '3'];
-var multipliers = [0, 2, 3, 10, 20, 100, 1];
+var multipliers = [-1, 2, 3, 10, 20, 100, 1];
 
 // Fill chances array with exactly 100 entries
 for (let i = 0; i < 100; i++) {
@@ -142,10 +142,10 @@ function gamble(bet) {
             let gain = bet * multipliers[i];
 
             money += gain + bet;
-
-            document.getElementById("result").innerHTML =
-                "you made " + gain + " dollars!";
-
+            if (gain < 0) {
+                document.getElementById("result").innerHTML =
+                    "you made " + gain + " dollars!";
+            }
             document.getElementById("money").innerHTML =
                 "you have " + money + "$";
 
