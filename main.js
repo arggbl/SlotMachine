@@ -144,10 +144,13 @@ function gamble(bet) {
             money += gain + bet;
             if (gain > 0) {
                 document.getElementById("result").innerHTML =
-                    "you made " + gain + " dollars!";
+                    "You made " + gain + " dollars!";
+            }else if (gain == 0) {
+                document.getElementById("result").innerHTML =
+                    "You broke even!";
             }
             document.getElementById("money").innerHTML =
-                "you have " + money + "$";
+                "You have " + money + "$";
 
             break;
         }
