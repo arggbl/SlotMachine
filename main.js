@@ -4,7 +4,7 @@ console.log(symbols);
 var money = 100;
 var chances = [];
 var combos = ['4','000', '22', '111', '222', '333', '3'];
-var multipliers = [-1, 2, 3, 10, 20, 100, 1];
+var multipliers = [-1, 2, 3, 10, 20, 100, 0];
 
 // Fill chances array with exactly 100 entries
 for (let i = 0; i < 100; i++) {
